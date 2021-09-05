@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= @page_title %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="<%= @seo_keywords %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,18 +11,33 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <style>
+      .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+      }
 
-  <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+      @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+              font-size: 3.5rem;
+          }
+      }
+  </style>
 
-  <%= render "shared/nav", location: 'top' %>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
-  <%= login_helper %>
-
-  <%= yield %>
-  <%= @copyright %>
-
-  <%= source_helper("application") %>
+      <%= render "shared/application_nav" %>
+      <%= login_helper %>
+      <%= yield %>
+      <%= @copyright %>
+      <%= source_helper("application") %>
+    </div>
   </body>
 </html>
