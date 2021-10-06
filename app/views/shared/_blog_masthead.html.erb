@@ -1,0 +1,4 @@
+<h3 class="pb-4 mb-4 font-italic border-bottom">
+  My blog
+</h3>
+<%= link_to 'Write a new Blog', new_blog_path  if logged_in?(:site_admin)%>

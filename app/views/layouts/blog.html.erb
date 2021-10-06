@@ -12,14 +12,24 @@
 </head>
 
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<div class="container">
+  <%#= render 'shared/blog_header' %>
+  <%= render 'shared/blog_nav' %>
 
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+      <%= render 'shared/blog_masthead' %>
+        <%= yield %>
+      </div>
+      <%= render 'shared/blog_sidebar' %>
+    </div>
+    <%= render 'shared/blog_footer' %>
 
-<%= login_helper %>
+    <%#= render "shared/nav", location: 'bottom' %>
+    <%= source_helper("blog") %>
 
-<%= yield %>
-<%= render "shared/nav", location: 'bottom' %>
-<%= source_helper("blog") %>
+  </main>
+</div>
 </body>
 </html>

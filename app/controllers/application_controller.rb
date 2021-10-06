@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :set_copyright
 
   def set_copyright
-    @copyright = DimaViewTool::Renderer.copyright 'Dima Grakov', 'All rights reserved'
+    @copyright = DimaViewTool::Renderer.copyright 'Dima Hrakau', 'All rights reserved'
   end
 
 end
