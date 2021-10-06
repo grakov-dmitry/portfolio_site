@@ -1,9 +1,18 @@
-<%= image_tag @portfolio_item.main_image %>
-<h1><%= @portfolio_item.title %></h1>
-<em><%= @portfolio_item.subtotle %></em>
-<p><%= @portfolio_item.body %></p>
-
-<h2>Technologies Used</h2>
-<% @portfolio_item.technologies.each do |t| %>
-  <p><%= t.name %></p>
-<% end %>
+<div class="album py-5 bg-light">
+  <div class="container>" style="max-width: 1140px; margin: 0 auto;">
+    <div class="row">
+      <div class="col-md-7">
+        <%= image_tag @portfolio_item.main_image %>
+      </div>
+      <div class="col-md-5">
+        <h1><%= @portfolio_item.title %></h1>
+        <em><%= @portfolio_item.subtotle %></em>
+        <p><%= @portfolio_item.body %></p>
+        <h3>Technologies Used</h3>
+        <% @portfolio_item.technologies.each do |t| %>
+          <p><%= t.name %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
