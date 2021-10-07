@@ -1,5 +1,5 @@
 class Topic < ApplicationRecord
-  validates_presence_of :title
+  validates :title, presence: true
 
-  has_many :blogs
+  has_many :blogs, dependent: nil
 end

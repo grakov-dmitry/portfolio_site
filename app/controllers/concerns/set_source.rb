@@ -10,6 +10,4 @@ module SetSource
   end
 end
 
-
 # before_action :set_source
-

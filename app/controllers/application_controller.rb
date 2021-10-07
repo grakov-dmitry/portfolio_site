@@ -8,13 +8,12 @@ class ApplicationController < ActionController::Base
   def set_copyright
     @copyright = DimaViewTool::Renderer.copyright 'Dima Hrakau', 'All rights reserved'
   end
-
 end
 
 module DimaViewTool
   class Renderer
-    def self.copyright name, msg
-      "&copy; #{Time.now.year} | <b>#{name}</b> #{msg}".html_safe
+    def self.copyright(name, msg)
+      "&copy; #{Time.zone.now.year} | <b>#{name}</b> #{msg}".html_safe
     end
   end
 end
