@@ -1,0 +1,44 @@
+AllCops:
+  TargetRubyVersion: 2.6.4
+  Exclude:
+    - 'db/**/*'
+Layout/LineLength:
+  Max: 120
+Layout/DotPosition:
+  EnforcedStyle: leading
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+Layout/ArgumentAlignment:
+  Enabled: true
+Metrics/AbcSize:
+  Max: 25
+Metrics/MethodLength:
+  Max: 20
+Metrics/CyclomaticComplexity:
+  Max: 10
+Metrics/PerceivedComplexity:
+  Max: 10
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/SingleLineBlockParams:
+  Enabled: false
+
+#-- Exceptions -----------------------------------------------------------------
+
+Lint/ParenthesesAsGroupedExpression:
+  Exclude:
+    - 'spec/**/*.rb'
+Style/GlobalVars:
+  Exclude:
+    - 'spec/**/*.rb'
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'

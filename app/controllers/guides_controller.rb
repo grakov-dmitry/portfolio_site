@@ -1,5 +1,5 @@
 class GuidesController < ApplicationController
-  before_action :set_guide, only: %i[ show edit update destroy ]
+  before_action :set_guide, only: %i[show edit update destroy]
 
   # GET /guides or /guides.json
   def index
@@ -7,8 +7,7 @@ class GuidesController < ApplicationController
   end
 
   # GET /guides/1 or /guides/1.json
-  def show
-  end
+  def show; end
 
   # GET /guides/new
   def new
@@ -16,8 +15,7 @@ class GuidesController < ApplicationController
   end
 
   # GET /guides/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /guides or /guides.json
   def create
@@ -25,7 +23,7 @@ class GuidesController < ApplicationController
 
     respond_to do |format|
       if @guide.save
-        format.html { redirect_to @guide, notice: "Guide was successfully created." }
+        format.html { redirect_to @guide, notice: 'Guide was successfully created.' }
         format.json { render :show, status: :created, location: @guide }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class GuidesController < ApplicationController
   def update
     respond_to do |format|
       if @guide.update(guide_params)
-        format.html { redirect_to @guide, notice: "Guide was successfully updated." }
+        format.html { redirect_to @guide, notice: 'Guide was successfully updated.' }
         format.json { render :show, status: :ok, location: @guide }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,19 +49,20 @@ class GuidesController < ApplicationController
   def destroy
     @guide.destroy
     respond_to do |format|
-      format.html { redirect_to guides_url, notice: "Guide was successfully destroyed." }
+      format.html { redirect_to guides_url, notice: 'Guide was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_guide
-      @guide = Guide.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def guide_params
-      params.require(:guide).permit(:title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_guide
+    @guide = Guide.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def guide_params
+    params.require(:guide).permit(:title)
+  end
 end
